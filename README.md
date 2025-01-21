@@ -44,8 +44,8 @@ Test it out with a value of for example 100 to see the effects.
 Once your level pack is finished you can just zip your level pack directory and release it to the public. They will then have to unzip your level pack in the level packs directory and it will be shown inside the game.
 
 User made levels and packs are saved in the ".sokoban_levelpacks" folder. 
-On the windows this folder is located in the same directory as the executable.
 In linux or if a HOME environment variable is set it will be located in "$HOME/.sokoban_levelpacks"
+On Funkey this will be "/mnt/FunKey/.sokoban_levelpacks"
 
 ### Sok/txt (ascii) Level Packs
 This version of sokoban supports .sok and .txt files that define sokoban levels in a text file format. 
@@ -54,7 +54,9 @@ There are only a select few of these preinstalled but you can however get extra 
 * http://sokobano.de/en/levels.php  (use exception to allow http) click the little blue download icons
 * https://www.sourcecode.se/sokoban/levels.php click a level pack and click on the little T icon to download a text level pack
 
-## Controls Gamepad (xbox controller)
+You can place there level pack files inside following directory on the funkey "/mnt/FunKey/.sokoban_levelpacks"
+
+## Controls
 
 | Button | Action |
 | ------ | ------ |

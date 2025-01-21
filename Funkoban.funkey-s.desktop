@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Funkoban
+Comment=A Sokoban Engine
+Terminal=false
+Type=Application
+Exec=funkoban
+Icon=graphics/sokoban
+Categories=games

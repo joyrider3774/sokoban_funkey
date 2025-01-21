@@ -7,7 +7,7 @@ Once all boxes are pushed to the correct spots the level is finished.
 Funkoban is basically a sokoban engine, it contains all the game rules and has the ability to use level packs. 
 It's possible to create your own levelpacks using the built in Level editor. 
 Each level pack can also have customized graphics and menu colors. 
-The game engine also has an undo system up to 1000 moves, and have custom 25 music files loaded up. 
+The game engine also has an undo system up to 1000 moves. 
 
 This version is a cleanup of my old gp2x version, using open source assets and adapted code
 

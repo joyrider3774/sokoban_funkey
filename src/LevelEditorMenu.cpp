@@ -135,7 +135,6 @@ void LevelEditorMenu()
 						{
 							Input->Reset();
 							sprintf(LevelPackName,"%s",PackName);
-							sprintf(LevelPackName,"%s",PackName);
 							sprintf(Tekst,"%s", getenv("HOME") == NULL ? ".": getenv("HOME"));
 #ifdef WIN32
 							mkdir(Tekst);
@@ -150,13 +149,13 @@ void LevelEditorMenu()
 							mkdir(Tekst,S_IRWXO|S_IRWXU|S_IRWXG);
 #endif
 
-							sprintf(Tekst,"%s/.sokoban_levelpacks/%s", getenv("HOME") == NULL ? ".": getenv("HOME"), LevelPackName);
+							sprintf(Tekst,"%s/.sokoban_levelpacks/%s._lev", getenv("HOME") == NULL ? ".": getenv("HOME"), LevelPackName);
 #ifdef WIN32
 							mkdir(Tekst);
 #else
 							mkdir(Tekst,S_IRWXO|S_IRWXU|S_IRWXG);
 #endif
-							sprintf(FileName,"%s/.sokoban_levelpacks/%s/colors.txt", getenv("HOME") == NULL ? ".": getenv("HOME"), LevelPackName);
+							sprintf(FileName,"%s/.sokoban_levelpacks/%s._lev/colors.txt", getenv("HOME") == NULL ? ".": getenv("HOME"), LevelPackName);
 							ColorsFile = fopen(FileName,"wt");
 							if (ColorsFile)
 							{
@@ -165,7 +164,7 @@ void LevelEditorMenu()
 								fprintf(ColorsFile,"[MenuBoxBorderColor]\nR=52\nG=102\nB=148\nA=255\n");
 								fclose(ColorsFile);
 							}
-							sprintf(FileName,"%s/.sokoban_levelpacks/%s/credits.dat", getenv("HOME") == NULL ? ".": getenv("HOME"), LevelPackName);
+							sprintf(FileName,"%s/.sokoban_levelpacks/%s._lev/credits.dat", getenv("HOME") == NULL ? ".": getenv("HOME"), LevelPackName);
 							Fp = fopen(FileName,"wt");
 							if (Fp)
 							{
@@ -177,7 +176,6 @@ void LevelEditorMenu()
 								if(strcmp(PackName,InstalledLevelPacks[Teller]) == 0)
 								{
 									SelectedLevelPack = Teller;
-									sprintf(LevelPackName,"%s",InstalledLevelPacks[SelectedLevelPack]);
 									sprintf(LevelPackName,"%s",InstalledLevelPacks[SelectedLevelPack]);
 								}
 						}
@@ -212,23 +210,23 @@ void LevelEditorMenu()
 							FindLevels();
 							for(Teller=1;Teller<=InstalledLevels;Teller++)
 							{
-								sprintf(Tekst,"%s/.sokoban_levelpacks/%s/level%d.lev",getenv("HOME") == NULL ? ".": getenv("HOME"), LevelPackName,Teller);
+								sprintf(Tekst,"%s/.sokoban_levelpacks/%s._lev/level%d.lev",getenv("HOME") == NULL ? ".": getenv("HOME"), LevelPackName,Teller);
 								if(FileExists(Tekst))
 								{
 									remove(Tekst);
 								}
 							}
-							sprintf(Tekst,"%s/.sokoban_levelpacks/%s/credits.dat", getenv("HOME") == NULL ? ".": getenv("HOME"), LevelPackName);
+							sprintf(Tekst,"%s/.sokoban_levelpacks/%s._lev/credits.dat", getenv("HOME") == NULL ? ".": getenv("HOME"), LevelPackName);
 							if(FileExists(Tekst))
 							{
 								remove(Tekst);
 							}
-							sprintf(Tekst,"%s/.sokoban_levelpacks/%s/colors.txt", getenv("HOME") == NULL ? ".": getenv("HOME"), LevelPackName);
+							sprintf(Tekst,"%s/.sokoban_levelpacks/%s._lev/colors.txt", getenv("HOME") == NULL ? ".": getenv("HOME"), LevelPackName);
 							if(FileExists(Tekst))
 							{
 								remove(Tekst);
 							}
-							sprintf(Tekst,"%s/.sokoban_levelpacks/%s",getenv("HOME") == NULL ? ".": getenv("HOME"), LevelPackName);
+							sprintf(Tekst,"%s/.sokoban_levelpacks/%s._lev",getenv("HOME") == NULL ? ".": getenv("HOME"), LevelPackName);
 							rmdir(Tekst);
 							SearchForLevelPacks();
 							LoadGraphics();

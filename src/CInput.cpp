@@ -29,7 +29,13 @@ void CInput::Update() {
             SpecialsHeld[SPECIAL_QUIT_EV] = true;
         
 		if(Event.type == SDL_KEYDOWN)
+        {
+            //hack for power / menu button to also quit the game
+            if(Event.key.keysym.sym == SDLK_q)
+                SpecialsHeld[SPECIAL_QUIT_EV] = true;
+            
             KeyboardHeld[Event.key.keysym.sym] = true;
+        }
         
 		if(Event.type == SDL_KEYUP)
             KeyboardHeld[Event.key.keysym.sym] = false;

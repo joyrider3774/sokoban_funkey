@@ -33,7 +33,7 @@ jobs:
           GAME_SYS: ${{env.GAME_SYS}}
         run: |
           mkdir -p opk
-          cp blips opk/funkoban
+          cp funkoban opk/funkoban
           cp -r ./levelpacks opk/levelpacks
           cp -r ./graphics opk/graphics
           cp -r ./fonts opk/fonts
